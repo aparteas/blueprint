@@ -1,9 +1,9 @@
 app:
-  title: OBOS Develoepr Portal
+  title: OBOS
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: OBOS
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -35,79 +35,116 @@ backend:
 integrations:
   github:
     - host: github.com
-      # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
-      # about setting up the GitHub integration here: https://backstage.io/docs/integrations/github/locations#configuration
-      token: ${GITHUB_TOKEN}
-    ### Example for how to add your GitHub Enterprise instance using the API:
-    # - host: ghe.example.net
-    #   apiBaseUrl: https://ghe.example.net/api/v3
-    #   token: ${GHE_TOKEN}
+      apps:
+        - appId: 1221516 # See https://backstage.io/docs/integrations/github/github-apps
+          webhookUrl: https://smee.io/CUlHU7NCPckp2wnnSNZt
+          clientId: Iv23liBKYifLbWQeuaVq
+          clientSecret: eee29329d56738b900daea740b255b68575492e5
+          webhookSecret: d6ca9102f530f033d366b03cdda9e4f8d1d5ce3b
+          privateKey: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEpQIBAAKCAQEAnynZo8eFRZVawugvyO3tSn5enVeHbQX1fcBHwmuEaEaoiw74
+            3hvez5NauAZ9lwwMOsR5vlLtABmiqhKn1cRM4ecH7m0+cexBPNu+NajbOZVcNUfT
+            siDRCCzJ8W3EP4paskWaY/4hi+YC49BwW7KajjV7lNZ7vZXqf9FRa09fVGZHTe0i
+            xJQYoUcum4T3XFlPWu54XdzmtjB/RI7nWbFsmon8l9kggRRS+CIG2aty1MDJsKdd
+            h8VUpet+A0weP5knJOC2355L610Uv6c7e9eSxQ7TCAttW30Vyi/dcMjRW6lBMgk/
+            AGkxwdN+aNC+WCluvCfRhyAGOGt85ofABd+J5wIDAQABAoIBAQCattqZSoPw3Lqq
+            BXsVrLnhlK8x8PhycL1uLG9UvKCroCuLaNVfSeYvDoS7p4uDPTHSGlRhPkiktUaa
+            XaIJuFQnryTVjhmKMeZEWzItBON8uQQ1wok0eJPYh3kRluqR/VImQmROWKSRUddz
+            TZU6fYWhQLnNNyR3aHfXIUgssK3w4iZt1AZ6NvwsiQZuFSrqYgH9hjM33W3ICTjz
+            JOoiRT6+xEFrFoEodmHcoMfNh32rKatHgbXUr3BYui6/Dmu/73WDiSeK/5UWZyWd
+            Sj0Ct+5xF9gsIbEhwdyATfI4dm2/kk/QYDL51Ey6KYCvn9CcsfezSN7J2G2o6gHK
+            5VRk14ApAoGBAMxH5w64/UkB5wznyZsxvMBQsLX3afM6hFaFpzn4UDBj6oQDMeP3
+            8bB/wYmLrEQtc2AknZhG8jBr3SU+0NvZw1gvlgoXg2XDyp6Bqr29tlgH4xJ4Gnsx
+            Y6kpzn7gHPnNB7FbV5omXs9GVlB89+jDEOCLgFX2xqAvplEenMXlp1fFAoGBAMd1
+            vrEpF1ulWap9/mi55G20R78Wsuc+rOHvEUm3XNW5lBwjH00IJ5SEkxbHYx0z1TJH
+            khPUb6OET+xRlEV8kjcO2tfX8hIMiNhx7ijwooRJLdpSM37jJfcQXeMicdBOx9IX
+            4eGB10Ze9u7l9TZQcfZCwFlX4EQmEQq6nbc8oom7AoGAfA+a0oUkRcdjA6Js/NR6
+            9izK9OfaL341SrqGsZ0NTiYQEbZDAVjeLjuYVSk/KHSV4ii6kPVdNmz7dBgvDaW1
+            jgPwUhavlQkQL609/VeOuu2nSNsp8fEvvleGceU3k7mh12NK03JEGAt2dhE/GdwF
+            jukJuqtRO41Uq2U0/raXJ6UCgYEAu06vTN8xuDaHBbxb9SzcfskVtzUxvEb3QxSm
+            P3uaCnrDw8iX1FccFDSLjJChWwMZ6qWbYFPWos/V3i6d9sMM6/dfO+LmyFxNBjW3
+            WWrgsymljag0A6x8Mo+EG5B1IRFaRMl4rbSo3MTBT4dTxzW0T3ZP+5ayXE0DI/gr
+            s6+VU5ECgYEAxPsXcRyQ0sfy7RYq/a9dVJVQlBmZjJwl9XZCj4vLgcXhdIlg4nKm
+            piCA82qK0UgWklshvNmutZZ7Y16GSzlJQSztrq2qfRaPSlzOiGqembfQjllFrlzy
+            Fu3oZN3nIWpBnhQgz9FOb0T2uHbW7r6TEEeE05GTvlD9x4Vz0d7YZDE=
+            -----END RSA PRIVATE KEY-----
 
 proxy:
-  ### Example for how to add a proxy endpoint for the frontend.
-  ### A typical reason to do this is to handle HTTPS and CORS for internal services.
-  # endpoints:
-  #   '/test':
-  #     target: 'https://example.com'
-  #     changeOrigin: true
+  ###
 
-# Reference documentation http://backstage.io/docs/features/techdocs/configuration
-# Note: After experimenting with basic setup, use CI/CD to generate docs
-# and an external cloud storage when deploying TechDocs for production use-case.
-# https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
 techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
-    runIn: 'docker' # Alternatives - 'local'
+    runIn: 'local' # Alternatives - 'local'
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
+#enableExperimentalRedirectFlow: true
+
 auth:
-  # see https://backstage.io/docs/auth/ to learn about auth providers
+  # environment: development
   providers:
-    # See https://backstage.io/docs/auth/guest/provider
-    guest: {}
+    github:
+      development:
+        clientId: ${AUTH_GITHUB_CLIENT_ID}
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+        signIn:
+          resolvers:
+            # See https://backstage.io/docs/auth/github/provider#resolvers for more resolver
+            # emailMatchingUserEntityProfileEmail usernameMatchingUserEntityName
+            - resolver: usernameMatchingUserEntityName
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
-  import:
-    entityFilename: catalog-info.yaml
-    pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
-  locations:
-    # Local example data, file locations are relative to the backend process, typically `packages/backend`
-    - type: file
-      target: ../../examples/entities.yaml
+    - allow: [ Component, API, Location, Domain, System, Template ] # Restrict entity types (default)
+  providers:
+    # Github catalog entity data. See https://backstage.io/docs/integrations/github/discovery/
+    github:
+      commonRepo: # ProviderId
+        organization: 'aparteas'
+        catalogPath: '/*.yaml'
+        rules:
+          allow: [ Domain, System, Template ] # Restrict entity types
+        filters:
+          repository: 'blueprint-catalog'
+          visibility: # Search in both public and private repos
+            - public
+            - internal
+        schedule:
+          initialDelay: { seconds: 5 }
+          frequency: { hours: 1 }
+          timeout: { seconds: 30 }
+#      devRepos: # ProviderId
+#        organization: 'aparteas'
+#        catalogPath: '/catalog-info.yaml'
+#        filters:
+#          visibility: # Search in both public and private repos
+#           - public
+#           - internal
+#        schedule:
+#          initialDelay: { seconds: 5 }
+#          frequency: { hours: 1 }
+#          timeout: { seconds: 30 }
 
-    # Local example template
-    - type: file
-      target: ../../examples/template/template.yaml
-      rules:
-        - allow: [Template]
-
-    # Local example organizational data
-    - type: file
-      target: ../../examples/org.yaml
-      rules:
-        - allow: [User, Group]
-
-    ## Uncomment these lines to add more example data
-    # - type: url
-    #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
-
-    ## Uncomment these lines to add an example org
-    # - type: url
-    #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
-    #   rules:
-    #     - allow: [User, Group]
+    # Github org data. See https://backstage.io/docs/integrations/github/org
+    githubOrg:
+      - id: github
+        githubUrl: https://github.com
+        orgs: ['aparteas']
+        schedule:
+          initialDelay: { seconds: 5 }
+          frequency: { hours: 1 }
+          timeout: { seconds: 30 }
   # Experimental: Always use the search method in UrlReaderProcessor.
   # New adopters are encouraged to enable it as this behavior will be the default in a future release.
   useUrlReadersSearch: true
 
-kubernetes:
+
+#kubernetes:
   # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework

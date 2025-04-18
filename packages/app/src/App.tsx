@@ -37,6 +37,8 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 
+import { providers } from './components/signin/identityProviders';
+
 const app = createApp({
   apis,
   bindRoutes({ bind }) {
@@ -56,9 +58,15 @@ const app = createApp({
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
   },
-  components: {
-    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
-  },
+    components: {
+        SignInPage: props => (
+            <SignInPage
+                {...props}
+                auto
+                providers={providers}
+            />
+        ),
+    },
 });
 
 const routes = (
