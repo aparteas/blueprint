@@ -36,39 +36,12 @@ integrations:
   github:
     - host: github.com
       apps:
-        - appId: 1221516 # See https://backstage.io/docs/integrations/github/github-apps
-          webhookUrl: https://smee.io/CUlHU7NCPckp2wnnSNZt
-          clientId: Iv23liBKYifLbWQeuaVq
-          clientSecret: eee29329d56738b900daea740b255b68575492e5
-          webhookSecret: d6ca9102f530f033d366b03cdda9e4f8d1d5ce3b
-          privateKey: |
-            -----BEGIN RSA PRIVATE KEY-----
-            MIIEpQIBAAKCAQEAnynZo8eFRZVawugvyO3tSn5enVeHbQX1fcBHwmuEaEaoiw74
-            3hvez5NauAZ9lwwMOsR5vlLtABmiqhKn1cRM4ecH7m0+cexBPNu+NajbOZVcNUfT
-            siDRCCzJ8W3EP4paskWaY/4hi+YC49BwW7KajjV7lNZ7vZXqf9FRa09fVGZHTe0i
-            xJQYoUcum4T3XFlPWu54XdzmtjB/RI7nWbFsmon8l9kggRRS+CIG2aty1MDJsKdd
-            h8VUpet+A0weP5knJOC2355L610Uv6c7e9eSxQ7TCAttW30Vyi/dcMjRW6lBMgk/
-            AGkxwdN+aNC+WCluvCfRhyAGOGt85ofABd+J5wIDAQABAoIBAQCattqZSoPw3Lqq
-            BXsVrLnhlK8x8PhycL1uLG9UvKCroCuLaNVfSeYvDoS7p4uDPTHSGlRhPkiktUaa
-            XaIJuFQnryTVjhmKMeZEWzItBON8uQQ1wok0eJPYh3kRluqR/VImQmROWKSRUddz
-            TZU6fYWhQLnNNyR3aHfXIUgssK3w4iZt1AZ6NvwsiQZuFSrqYgH9hjM33W3ICTjz
-            JOoiRT6+xEFrFoEodmHcoMfNh32rKatHgbXUr3BYui6/Dmu/73WDiSeK/5UWZyWd
-            Sj0Ct+5xF9gsIbEhwdyATfI4dm2/kk/QYDL51Ey6KYCvn9CcsfezSN7J2G2o6gHK
-            5VRk14ApAoGBAMxH5w64/UkB5wznyZsxvMBQsLX3afM6hFaFpzn4UDBj6oQDMeP3
-            8bB/wYmLrEQtc2AknZhG8jBr3SU+0NvZw1gvlgoXg2XDyp6Bqr29tlgH4xJ4Gnsx
-            Y6kpzn7gHPnNB7FbV5omXs9GVlB89+jDEOCLgFX2xqAvplEenMXlp1fFAoGBAMd1
-            vrEpF1ulWap9/mi55G20R78Wsuc+rOHvEUm3XNW5lBwjH00IJ5SEkxbHYx0z1TJH
-            khPUb6OET+xRlEV8kjcO2tfX8hIMiNhx7ijwooRJLdpSM37jJfcQXeMicdBOx9IX
-            4eGB10Ze9u7l9TZQcfZCwFlX4EQmEQq6nbc8oom7AoGAfA+a0oUkRcdjA6Js/NR6
-            9izK9OfaL341SrqGsZ0NTiYQEbZDAVjeLjuYVSk/KHSV4ii6kPVdNmz7dBgvDaW1
-            jgPwUhavlQkQL609/VeOuu2nSNsp8fEvvleGceU3k7mh12NK03JEGAt2dhE/GdwF
-            jukJuqtRO41Uq2U0/raXJ6UCgYEAu06vTN8xuDaHBbxb9SzcfskVtzUxvEb3QxSm
-            P3uaCnrDw8iX1FccFDSLjJChWwMZ6qWbYFPWos/V3i6d9sMM6/dfO+LmyFxNBjW3
-            WWrgsymljag0A6x8Mo+EG5B1IRFaRMl4rbSo3MTBT4dTxzW0T3ZP+5ayXE0DI/gr
-            s6+VU5ECgYEAxPsXcRyQ0sfy7RYq/a9dVJVQlBmZjJwl9XZCj4vLgcXhdIlg4nKm
-            piCA82qK0UgWklshvNmutZZ7Y16GSzlJQSztrq2qfRaPSlzOiGqembfQjllFrlzy
-            Fu3oZN3nIWpBnhQgz9FOb0T2uHbW7r6TEEeE05GTvlD9x4Vz0d7YZDE=
-            -----END RSA PRIVATE KEY-----
+        - appId: ${APP_GITHUB_APP_ID}
+          clientId: ${APP_GITHUB_CLIENT_ID}
+          clientSecret: ${APP_GITHUB_CLIENT_SECRET}
+          webhookUrl: ${APP_GITHUB_WEBHOOK_URL}
+          webhookSecret: ${APP_GITHUB_WEBHOOK_SECRET}
+          privateKey: ${APP_GITHUB_PRIVATE_KEY}
 
 proxy:
   ###
@@ -87,8 +60,8 @@ auth:
   providers:
     github:
       development:
-        clientId: ${AUTH_GITHUB_CLIENT_ID}
-        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+        clientId: ${OAUTH_GITHUB_CLIENT_ID}
+        clientSecret: ${OAUTH_GITHUB_CLIENT_SECRET}
         signIn:
           resolvers:
             # See https://backstage.io/docs/auth/github/provider#resolvers for more resolver
