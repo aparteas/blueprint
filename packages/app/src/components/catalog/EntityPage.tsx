@@ -77,8 +77,8 @@ const cicdContent = (
   // You can for example enforce that all components of type 'service' should use GitHubActions
   <EntitySwitch>
     <EntitySwitch.Case if={isGithubActionsAvailable}>
-        <EntityGithubActionsContent />
-      </EntitySwitch.Case>
+      <EntityGithubActionsContent />
+    </EntitySwitch.Case>
 
     <EntitySwitch.Case>
       <EmptyState
