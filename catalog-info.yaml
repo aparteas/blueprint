@@ -14,3 +14,4 @@ spec:
   lifecycle: experimental
   dependsOn:
     - resource:default/runtime-dx-aks
+    - component:default/blueprint-catalog
