@@ -14,4 +14,23 @@ spec:
   lifecycle: experimental
   dependsOn:
     - resource:default/runtime-dx-aks
+    - resource:default/database-blueprint
     - component:default/blueprint-catalog
+    - system:default/system-entra-id
+    - system:default/system-github
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: database-blueprint
+  title: Blueprint Database
+  description: Database for Blueprint application
+  tags:
+    - backstage
+spec:
+  type: database
+  owner: team-dx
+  system: system-blueprint
+  lifecycle: experimental
+  dependsOn:
+    - resource:default/azure-lz-1
