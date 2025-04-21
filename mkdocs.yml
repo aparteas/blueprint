@@ -2,3 +2,14 @@ site_name: 'Blueprint TechDocs'
 
 nav:
   - Home: index.md
+  - About:
+      - Overview: about/overview.md
+      - Team: about/team.md
+  - Documentation:
+      - Getting Started: docs/getting_started.md
+      - User Guide:
+          - Installation: docs/user_guide/installation.md
+          - Configuration: docs/user_guide/configuration.md
+theme:
+  name: readthedocs
+
