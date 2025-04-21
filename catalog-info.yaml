@@ -9,6 +9,7 @@ metadata:
     - backstage
   annotations:
     backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: aparteas/blueprint
 spec:
   type: website
   owner: team-dx
