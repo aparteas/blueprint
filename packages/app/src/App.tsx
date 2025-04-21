@@ -58,15 +58,9 @@ const app = createApp({
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
   },
-    components: {
-        SignInPage: props => (
-            <SignInPage
-                {...props}
-                auto
-                providers={providers}
-            />
-        ),
-    },
+  components: {
+    SignInPage: props => <SignInPage {...props} auto providers={providers} />,
+  },
 });
 
 const routes = (

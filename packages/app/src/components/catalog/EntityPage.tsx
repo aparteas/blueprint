@@ -59,8 +59,10 @@ import {
   isKubernetesAvailable,
 } from '@backstage/plugin-kubernetes';
 import { ReadmeCard, isReadmeAvailable } from '@axis-backstage/plugin-readme';
-import { EntityGithubActionsContent, isGithubActionsAvailable } from '@backstage/plugin-github-actions';
-
+import {
+  EntityGithubActionsContent,
+  isGithubActionsAvailable,
+} from '@backstage/plugin-github-actions';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -75,10 +77,10 @@ const cicdContent = (
   // You can for example enforce that all components of type 'service' should use GitHubActions
   <EntitySwitch>
     {
-      <EntitySwitch.Case>
+      <EntitySwitch.Case if={isGithubActionsAvailable}>
         <EntityGithubActionsContent />
       </EntitySwitch.Case>
-     }
+    }
 
     <EntitySwitch.Case>
       <EmptyState
@@ -138,9 +140,9 @@ const overviewContent = (
     </Grid>
     <EntitySwitch>
       <EntitySwitch.Case if={isReadmeAvailable}>
-          <Grid item md={5} xs={12}>
-              <ReadmeCard maxHeight={350} />
-          </Grid>
+        <Grid item md={5} xs={12}>
+          <ReadmeCard maxHeight={350} />
+        </Grid>
       </EntitySwitch.Case>
     </EntitySwitch>
     <Grid item md={7} xs={12}>

@@ -73,7 +73,7 @@ scaffolder:
 
 catalog:
   rules:
-    - allow: [ Component, API, Domain, System, Resource ] # Restrict entity types (default)
+    - allow: [Component, API, Domain, System, Resource] # Restrict entity types (default)
   providers:
     # Github catalog entity data. See https://backstage.io/docs/integrations/github/discovery/
     github:
@@ -81,7 +81,7 @@ catalog:
         organization: 'aparteas'
         catalogPath: '/*.yaml'
         rules:
-          allow: [ Domain, System, Resource ] # Restrict entity types
+          allow: [Domain, System, Resource] # Restrict entity types
         filters:
           repository: 'blueprint-catalog'
           visibility: # Search in both public and private repos
@@ -95,11 +95,11 @@ catalog:
         organization: 'aparteas'
         catalogPath: '/catalog-info.yaml'
         rules:
-          allow: [ Component, API, Resource ] # Restrict entity types
+          allow: [Component, API, Resource] # Restrict entity types
         filters:
           visibility: # Search in both public and private repos
-           - public
-           - internal
+            - public
+            - internal
         schedule:
           initialDelay: { seconds: 5 }
           frequency: { hours: 1 }
@@ -118,9 +118,8 @@ catalog:
   # New adopters are encouraged to enable it as this behavior will be the default in a future release.
   useUrlReadersSearch: true
 
-
 #kubernetes:
-  # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
+# see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
 
 # see https://backstage.io/docs/permissions/getting-started for more on the permission framework
 permission:
