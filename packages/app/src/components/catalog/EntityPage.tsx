@@ -58,6 +58,7 @@ import {
   EntityKubernetesContent,
   isKubernetesAvailable,
 } from '@backstage/plugin-kubernetes';
+import { ReadmeCard, isReadmeAvailable } from '@axis-backstage/plugin-readme';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -135,12 +136,18 @@ const overviewContent = (
     <Grid item md={6} xs={12}>
       <EntityCatalogGraphCard variant="gridItem" height={400} />
     </Grid>
-
+    <EntitySwitch>
+      <EntitySwitch.Case if={isReadmeAvailable}>
+          <Grid item md={5} xs={12}>
+              <ReadmeCard maxHeight={350} />
+          </Grid>
+      </EntitySwitch.Case>
+    </EntitySwitch>
+    <Grid item md={7} xs={12}>
+      <EntityHasSubcomponentsCard variant="gridItem" />
+    </Grid>
     <Grid item md={4} xs={12}>
       <EntityLinksCard />
-    </Grid>
-    <Grid item md={8} xs={12}>
-      <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
   </Grid>
 );
