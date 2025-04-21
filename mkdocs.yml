@@ -1,7 +1,4 @@
-site_name: 'blueprint-docs'
+site_name: 'Blueprint TechDocs'
 
 nav:
   - Home: index.md
-
-plugins:
-  - techdocs-core
