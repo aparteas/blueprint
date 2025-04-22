@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: blueprint
-  title: Blueprint
+  title: Blueprint Web
   description: OBOS Developer Portal (Backstage)
   tags:
     - node
