@@ -1,5 +1,4 @@
-site_name: ${{values.component_id}}
-site_description: ${{values.description}}
+site_name: 'Blueprint Docs'
 
 nav:
   - Home: index.md
@@ -11,6 +10,3 @@ nav:
       - User Guide:
           - Installation: user_guide/installation.md
           - Configuration: user_guide/configuration.md
-theme:
-  name: readthedocs
-
