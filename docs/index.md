@@ -1,3 +1,3 @@
-# Welcome to Blueprint TechDocs
+# ${{ values.component_id }}
 
-This is a basic example of documentation.
+${{ values.description }}
