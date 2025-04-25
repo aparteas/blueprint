@@ -73,7 +73,7 @@ scaffolder:
 
 catalog:
   rules:
-    - allow: [Component, API, Domain, System, Resource] # Restrict entity types (default)
+    - allow: [Component, API, Domain, System, Resource, Group] # Restrict entity types (default)
   providers:
     # Github catalog entity data. See https://backstage.io/docs/integrations/github/discovery/
     github:
@@ -81,7 +81,7 @@ catalog:
         organization: 'aparteas'
         catalogPath: '/*.yaml'
         rules:
-          allow: [Domain, System, Resource] # Restrict entity types
+          allow: [Domain, System, Resource, Group] # Restrict entity types
         filters:
           repository: 'blueprint-catalog'
           visibility: # Search in both public and private repos
